@@ -4,6 +4,11 @@ phases:
   build:
     commands:
       - make build
+  post_build:
+    commands:
+      - echo "Invalidating CloudFront cache..."
+      - aws cloudfront create-invalidation --distribution-id=$CLOUDFRONT_DIST_1 --paths /*
+      - aws cloudfront create-invalidation --distribution-id=$CLOUDFRONT_DIST_2 --paths /*
 artifacts:
   files:
     - '**/*'
