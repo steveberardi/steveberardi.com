@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Photos - Steve Berardi{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/justifiedgallery.min.css" />
+<link rel="stylesheet" href="/css/swipebox.min.css">
+{% endblock %}
+
+{% block content %}
+<br/>
+<div id="photos"></div>
+{% endblock %}
+
+{% block footer_scripts %}
+ <!-- JavaScript -->
+ <script src="/js/jquery-2.1.0.min.js"></script>
+    
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ <!-- local -->
+ <script src="/js/jquery.justifiedgallery.min.js"></script>
+ <script src="/js/jquery.swipebox.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+ $.getJSON('https://api.flickr.com/services/rest/?jsoncallback=?', {
+     'api_key': 'd95b0576ae2c7d48f78edf2c022366d8',
+     'format': 'json',
+     'method': 'flickr.photos.search',
+     'user_id': '33017468@N07',
+     'tags': 'sb-favorites'
+   }).done(function( data ) {
+       var photos = data.photos;
+       var imagesHTML = '';
+       var link, title, thumbnail, src;
+       var column = 0;
+       var id;
+       var limit = 128;
+
+       for ( var i = 0; i < photos.photo.length && i < limit; i++ ) {
+           link = 'https://farm' + photos.photo[ i ].farm + 
+                   '.static.flickr.com/' + photos.photo[ i ].server + '/' + photos.photo[ i ].id + '_' + 
+                   photos.photo[i].secret + '_';
+           thumbnail = link + 'z.jpg';
+           src = link + 'b.jpg';
+           title = photos.photo[ i ].title;
+           id = 'thumbnail-' + i;
+
+           imagesHTML = '<a href="' + src + '" class="swipebox-image">';
+           imagesHTML += '<img alt="' + title + '" src="' + thumbnail + '"/>';
+           imagesHTML += '</a>';
+
+           $('#photos').append(imagesHTML);
+       }
+       $("#photos").justifiedGallery({
+         rowHeight : 180,
+         lastRow: 'hide'
+       }).on('jg.complete', function () {
+         $('.swipebox-image').swipebox();
+       });
+ });
+
+});
+
+</script>
+
+{% endblock %}
