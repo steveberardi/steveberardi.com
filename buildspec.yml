@@ -6,4 +6,5 @@ phases:
       - make build
 artifacts:
   files:
-    - build/
+    - '**/*'
+  base-directory: 'build'
