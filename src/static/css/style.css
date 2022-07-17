@@ -9,7 +9,7 @@ body {
 }
 
 body p a {
-  color: #30BA43;
+  color: #134dd4;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,19 +49,19 @@ a {
 }
 
 .sb-footer {
-  font-size: 16px;
+  font-size: 18px;
   padding-bottom: 60px;
   color: gray;
 }
 
 .sb-footer a {
   color: gray;
-  font-size: 28px;
+  font-size: 24px;
   padding: 0 6px;
 }
 
 .sb-footer a:hover {
-  color: black;
+  color: #134dd4;
 }
 
 .img-bio {
