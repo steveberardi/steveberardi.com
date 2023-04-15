@@ -6,37 +6,32 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://steveberardi.com/</loc>
-  <lastmod>2018-06-25T20:37:19+00:00</lastmod>
+  <lastmod>2023-04-12T20:37:19+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://steveberardi.com/projects/</loc>
+  <lastmod>2023-04-12T20:37:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://steveberardi.com/photos/</loc>
-  <lastmod>2018-06-25T20:37:19+00:00</lastmod>
+  <lastmod>2023-04-12T20:37:19+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://steveberardi.com/books/</loc>
-  <lastmod>2018-06-25T20:37:19+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://steveberardi.com/tours/</loc>
-  <lastmod>2018-06-25T20:37:19+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://steveberardi.com/blog/</loc>
-  <lastmod>2018-06-25T20:37:02+00:00</lastmod>
+  <lastmod>2023-04-12T20:37:19+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://steveberardi.com/about/</loc>
-  <lastmod>2018-06-30T20:55:28+00:00</lastmod>
+  <lastmod>2023-04-12T20:37:19+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://steveberardi.com/contact/</loc>
-  <lastmod>2018-06-25T20:37:19+00:00</lastmod>
+  <lastmod>2023-04-12T20:37:19+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
