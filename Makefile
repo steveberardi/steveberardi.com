@@ -3,7 +3,7 @@ venv/bin/activate: requirements.txt
 	./venv/bin/pip install -r requirements.txt
 
 start: venv/bin/activate
-	./venv/bin/python -m http.server --directory ./build
+	./venv/bin/python -m http.server --directory ./build 80
 
 build: venv/bin/activate
 	rm -rf build
